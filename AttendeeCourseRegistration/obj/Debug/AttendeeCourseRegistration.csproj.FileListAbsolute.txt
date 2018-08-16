@@ -1,0 +1,22 @@
+C:\Users\gcasste1\AppData\Local\Temporary Projects\AttendeeCourseRegistration\bin\Debug\AttendeeCourseRegistration.exe.config
+C:\Users\gcasste1\AppData\Local\Temporary Projects\AttendeeCourseRegistration\bin\Debug\AttendeeCourseRegistration.exe
+C:\Users\gcasste1\AppData\Local\Temporary Projects\AttendeeCourseRegistration\bin\Debug\AttendeeCourseRegistration.pdb
+C:\Users\gcasste1\AppData\Local\Temporary Projects\AttendeeCourseRegistration\obj\Debug\AttendeeCourseRegistration.csprojResolveAssemblyReference.cache
+C:\Users\gcasste1\AppData\Local\Temporary Projects\AttendeeCourseRegistration\obj\Debug\AttendeeCourseRegistration.exe
+C:\Users\gcasste1\AppData\Local\Temporary Projects\AttendeeCourseRegistration\obj\Debug\AttendeeCourseRegistration.pdb
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\AttendeeCourseRegistration.exe.config
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\obj\Debug\AttendeeCourseRegistration.exe
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\obj\Debug\AttendeeCourseRegistration.pdb
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\AttendeeCourseRegistration.exe
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\AttendeeCourseRegistration.pdb
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\obj\Debug\AttendeeCourseRegistration.csprojResolveAssemblyReference.cache
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\obj\Debug\AttendeeCourseRegistration.csproj.ResolveComReference.cache
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\Castle.Core.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\Moq.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\System.ValueTuple.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\Castle.Core.xml
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\Moq.pdb
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\Moq.xml
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistration\bin\Debug\System.ValueTuple.xml

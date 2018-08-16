@@ -1,0 +1,30 @@
+CourseId,CourseTitle,AttendeeId,FirstName,LastName,Email,Phone,EnrollmentStatus
+1,Popular Course,1,Lydia,Pollard,PGH.Pollard@email.com,,Registered
+2,Good Course,1,Lydia,Pollard,PGH.Pollard@email.com,,Registered
+3,Horrible Course,1,Lydia,Pollard,PGH.Pollard@email.com,,Registered
+2,Good Course,8,Emerald,Reid,PG.Reid@email.com,,Registered
+2,Good Course,5,Macaulay,Sykes,GH.Sykes@email.com,1-231-702-8318,Registered
+1,Popular Course,14,Bernard,Fleming,P.Fleming@email.com,,Registered
+1,Popular Course,2,Moses,Montoya,P.Montoya@email.com,2-825-905-1112,Registered
+2,Good Course,3,Whilemina,Harper,PG.Harper@email.com,,Registered
+3,Horrible Course,12,Camilla,Cruz,H.Cruz@email.com,1-836-981-7444,Registered
+1,Popular Course,15,Kamal,Boyle,P.Boyle@email.com,2-982-795-5059,Registered
+1,Popular Course,3,Whilemina,Harper,PG.Harper@email.com,,Registered
+3,Horrible Course,5,Macaulay,Sykes,GH.Sykes@email.com,1-231-702-8318,Registered
+1,Popular Course,6,Zachary,Salinas,P.Salinas@email.com,2-778-966-5589,Registered
+1,Popular Course,9,Damon,Morin,P.Morin@email.com,3-411-607-8413,Registered
+1,Popular Course,13,Larissa,Newman,P.Newman@email.com,2-473-896-5475,Registered
+1,Popular Course,16,Dale,Brock,P.Brock@email.com,2-917-846-3430,Registered
+1,Popular Course,8,Emerald,Reid,PG.Reid@email.com,,Registered
+2,Good Course,10,Moses,Collins,G.Collins@email.com,1-735-715-1689,Registered
+2,Good Course,6,Zachary,Salinas,P.Salinas@email.com,2-778-966-5589,Wait Listed
+3,Horrible Course,9,Damon,Morin,P.Morin@email.com,3-411-607-8413,Wait Listed
+2,Good Course,16,Dale,Brock,P.Brock@email.com,2-917-846-3430,Wait Listed
+2,Good Course,2,Moses,Montoya,P.Montoya@email.com,2-825-905-1112,Wait Listed
+1,Popular Course,4,Malik,Flynn,,1-676-136-4538,Wait Listed
+1,Popular Course,11,Camden,Salazar,,1-759-637-2679,Wait Listed
+2,Good Course,15,Kamal,Boyle,P.Boyle@email.com,2-982-795-5059,Wait Listed
+1,Popular Course,5,Macaulay,Sykes,GH.Sykes@email.com,1-231-702-8318,Wait Listed
+1,Popular Course,10,Moses,Collins,G.Collins@email.com,1-735-715-1689,Wait Listed
+2,Good Course,13,Larissa,Newman,P.Newman@email.com,2-473-896-5475,Wait Listed
+1,Popular Course,12,Camilla,Cruz,H.Cruz@email.com,1-836-981-7444,Wait Listed

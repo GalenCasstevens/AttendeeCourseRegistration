@@ -1,0 +1,12 @@
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\AttendeeCourseRegistrationTests.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\AttendeeCourseRegistrationTests.pdb
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\AttendeeCourseRegistration.exe
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\AttendeeCourseRegistration.pdb
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\obj\Debug\AttendeeCourseRegistrationTests.csprojResolveAssemblyReference.cache
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\obj\Debug\AttendeeCourseRegistrationTests.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\obj\Debug\AttendeeCourseRegistrationTests.pdb
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\gcasste1\Documents\Visual Studio 2015\Projects\ConsoleApp\AttendeeCourseRegistration\AttendeeCourseRegistrationTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

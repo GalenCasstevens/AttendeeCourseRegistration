@@ -1,0 +1,5 @@
+﻿CourseId,CourseTitle,CourseShortDescription,CourseDateTime,Capacity
+1,"Popular Course","Everyone wants to take this course.  It is amazing.",2018-01-08 09:00:00,10
+2,"Good Course","This is a good course.  Important information is shared during this course.",2018-01-08 10:00:00,5
+3,"Horrible Course","This course is so bad ... [how bad is it?] ... only 3 people can register.",2018-01-08 11:00:00,3
+4,"Empty Course","No one ever registers for this course.  I wonder why.",2018-01-08 12:00:00,1
