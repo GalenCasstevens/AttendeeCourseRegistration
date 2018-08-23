@@ -76,30 +76,45 @@ namespace AttendeeCourseRegistration
                     values = parser.ReadFields();
                 }
 
+                if (values.Length > 5)
+                {
+                    throw new Exception("The only columns in your course file should be: " +
+                                        "CourseId, Title, Description, DateTime and Capcity");
+                }
+
                 int id = 0,
                     capacity = 0;
                 String title = null,
-                        description = null,
-                        dateTime = null;
+                       description = null,
+                       dateTime = null;
                 try
                 {
                     id = int.Parse(values[0]);
-                    title = values[1];
-                    if (!String.IsNullOrEmpty(values[2]))
-                    {
-                        description = values[2];
-                    }
-                    DateTime test;
-                    if(!DateTime.TryParse(values[3], out test))
-                    {
-                        throw new Exception("The date in your course file is in the incorrect format.");
-                    }
-                    dateTime = values[3];
+                }
+                catch (FormatException e)
+                {
+                    throw new FormatException("An ID in your course file is invalid.", e);
+                }
+
+                title = values[1];
+                if (!String.IsNullOrEmpty(values[2]))
+                {
+                    description = values[2];
+                }
+                DateTime test;
+                if(!DateTime.TryParse(values[3], out test))
+                {
+                    throw new Exception("The date in your course file is in the incorrect format.");
+                }
+                dateTime = values[3];
+
+                try
+                {
                     capacity = int.Parse(values[4]);
                 }
-                catch(FormatException e)
+                catch (FormatException e)
                 {
-                    throw new FormatException("The data in your course file is not in the correct format.", e);
+                    throw new FormatException("A capacity value in your course file is invalid.", e);
                 }
 
                 if(String.IsNullOrEmpty(title))
@@ -150,24 +165,24 @@ namespace AttendeeCourseRegistration
                 try
                 {
                     id = int.Parse(values[0]);
-                    firstName = values[1];
-                    lastName = values[2];
-                    if (!String.IsNullOrEmpty(values[3]))
-                    {
-                        company = values[3];
-                    }
-                    if (!String.IsNullOrEmpty(values[4]))
-                    {
-                        email = values[4];
-                    }
-                    if (!String.IsNullOrEmpty(values[5]))
-                    {
-                        phone = values[5];
-                    }
                 }
-                catch(FormatException e)
+                catch (FormatException e)
                 {
-                    throw new FormatException("The data in your attendee file is not in the correct format.");
+                    throw new FormatException("An ID in your attendee file is invalid.");
+                }
+                firstName = values[1];
+                lastName = values[2];
+                if (!String.IsNullOrEmpty(values[3]))
+                {
+                    company = values[3];
+                }
+                if (!String.IsNullOrEmpty(values[4]))
+                {
+                    email = values[4];
+                }
+                if (!String.IsNullOrEmpty(values[5]))
+                {
+                    phone = values[5];
                 }
 
                 if(String.IsNullOrEmpty(firstName))
@@ -217,13 +232,20 @@ namespace AttendeeCourseRegistration
                 try
                 {
                     courseId = int.Parse(values[0]);
-                    attendeeId = int.Parse(values[1]);
-                    dateTime = values[2];
                 }
-                catch(FormatException e)
+                catch (FormatException e)
                 {
-                    throw new FormatException("The data in your registration file is not in the correct format.");
+                    throw new FormatException("A CourseID in your registration file is not in the correct format.");
                 }
+                try
+                {
+                    attendeeId = int.Parse(values[1]);
+                }
+                catch (FormatException e)
+                {
+                    throw new FormatException("A AttendeeID in your registration file is not in the correct format.");
+                }
+                dateTime = values[2];
 
                 DateTime test;
                 if (!DateTime.TryParse(values[2], out test))

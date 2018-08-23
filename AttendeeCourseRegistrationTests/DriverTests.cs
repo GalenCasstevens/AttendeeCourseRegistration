@@ -18,7 +18,7 @@ namespace AttendeeCourseRegistrationTests
         {
             String[] testStrings = new String[]
             {
-                "CourseId,Title,Description,DateTime,Capcity",
+                "CourseId,Title,Description,DateTime,Capacity",
                 "2,\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,300",
                 "3,\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
             };
@@ -44,7 +44,7 @@ namespace AttendeeCourseRegistrationTests
         {
             String[] testStrings = new String[]
             {
-                "CourseId,Title,Description,DateTime,Capcity",
+                "CourseId,Title,Description,DateTime,Capacity",
                 "\"\",\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,300",
                 "\"String shouldn't be here\",\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
             };
@@ -52,11 +52,11 @@ namespace AttendeeCourseRegistrationTests
         }
 
         [TestMethod]
-        public void validateMessageCourseInvalidIDOrCapacity()
+        public void validateMessageCourseInvalidID()
         {
             String[] testStrings = new String[]
             {
-                "CourseId,Title,Description,DateTime,Capcity",
+                "CourseId,Title,Description,DateTime,Capacity",
                 "\"\",\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,\"efewfewfewf\"",
                 "\"String shouldn't be here\",\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
             };
@@ -67,7 +67,27 @@ namespace AttendeeCourseRegistrationTests
             }
             catch(FormatException e)
             {
-                Assert.AreEqual("The data in your course file is not in the correct format.", e.Message);
+                Assert.AreEqual("An ID in your course file is invalid.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageCourseInvalidCapacity()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,Title,Description,DateTime,Capacity",
+                "12,\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,\"efewfewfewf\"",
+                "23,\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
+            };
+
+            try
+            {
+                List<Course> testCourses = Driver.generateCoursesFromFile(testStrings);
+            }
+            catch (FormatException e)
+            {
+                Assert.AreEqual("A capacity value in your course file is invalid.", e.Message);
             }
         }
 
@@ -76,7 +96,7 @@ namespace AttendeeCourseRegistrationTests
         {
             String[] testStrings = new String[]
             {
-                "CourseId,Title,Description,DateTime,Capcity",
+                "CourseId,Title,Description,DateTime,Capacity",
                 "5,\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,300",
                 "5,\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
             };
@@ -96,7 +116,7 @@ namespace AttendeeCourseRegistrationTests
         {
             String[] testStrings = new String[]
             {
-                "CourseId,Title,Description,DateTime,Capcity",
+                "CourseId,Title,Description,DateTime,Capacity",
                 "5,\"\",\"\",2009-12-07 12:44:21,300",
                 "6,\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
             };
@@ -116,7 +136,7 @@ namespace AttendeeCourseRegistrationTests
         {
             String[] testStrings = new String[]
             {
-                "CourseId,Title,Description,DateTime,Capcity",
+                "CourseId,Title,Description,DateTime,Capacity",
                 "5,\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,300",
                 "6,\"The Most Popular Title Indeed\",\"A magnificent description.\",23,400"
             };
@@ -185,7 +205,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (FormatException e)
             {
-                Assert.AreEqual("The data in your attendee file is not in the correct format.", e.Message);
+                Assert.AreEqual("An ID in your attendee file is invalid.", e.Message);
             }
         }
 
@@ -277,7 +297,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch(FormatException e)
             {
-                Assert.AreEqual("The data in your registration file is not in the correct format.", e.Message);
+                Assert.AreEqual("A CourseID in your registration file is not in the correct format.", e.Message);
             }
         }
 
@@ -287,7 +307,7 @@ namespace AttendeeCourseRegistrationTests
             String[] testStrings = new String[]
             {
                 "CourseId,AttendeeId,DateTime",
-                "67,\"rgrgeregregregreg\",trhgthrth",
+                "34,\"rgrgergreg\",trhgthrth",
                 "123,234,1824-02-15 03:11:04"
             };
 
@@ -297,7 +317,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (FormatException e)
             {
-                Assert.AreEqual("The data in your registration file is not in the correct format.", e.Message);
+                Assert.AreEqual("A AttendeeID in your registration file is not in the correct format.", e.Message);
             }
         }
 
@@ -340,6 +360,8 @@ namespace AttendeeCourseRegistrationTests
                 Assert.AreEqual("An attendee cannot be registered for the same course twice.", e.Message);
             }
         }
+
+
 
         [TestMethod]
         public void outputToCSVTest()
