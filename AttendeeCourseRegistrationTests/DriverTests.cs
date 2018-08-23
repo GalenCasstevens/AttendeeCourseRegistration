@@ -39,6 +39,99 @@ namespace AttendeeCourseRegistrationTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void invalidDataFromCourseFile()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,Title,Description,DateTime,Capcity",
+                "\"\",\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,300",
+                "\"String shouldn't be here\",\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
+            };
+            List<Course> testCourses = Driver.generateCoursesFromFile(testStrings);
+        }
+
+        [TestMethod]
+        public void validateMessageCourseInvalidIDOrCapacity()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,Title,Description,DateTime,Capcity",
+                "\"\",\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,\"efewfewfewf\"",
+                "\"String shouldn't be here\",\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
+            };
+            
+            try
+            {
+                List<Course> testCourses = Driver.generateCoursesFromFile(testStrings);
+            }
+            catch(FormatException e)
+            {
+                Assert.AreEqual("The data in your course file is not in the correct format.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageCourseDuplicateID()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,Title,Description,DateTime,Capcity",
+                "5,\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,300",
+                "5,\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
+            };
+
+            try
+            {
+                List<Course> testCourses = Driver.generateCoursesFromFile(testStrings);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("IDs in the course file must be unique.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageCourseEmptyTitle()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,Title,Description,DateTime,Capcity",
+                "5,\"\",\"\",2009-12-07 12:44:21,300",
+                "6,\"The Most Popular Title Indeed\",\"A magnificent description.\",2003-12-25 11:55:33,400"
+            };
+
+            try
+            {
+                List<Course> testCourses = Driver.generateCoursesFromFile(testStrings);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Title in the course file can't be empty", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageCourseInvalidDateTime()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,Title,Description,DateTime,Capcity",
+                "5,\"A Very Popular Title Indeed\",\"An awesome description.\",2009-12-07 12:44:21,300",
+                "6,\"The Most Popular Title Indeed\",\"A magnificent description.\",23,400"
+            };
+
+            try
+            {
+                List<Course> testCourses = Driver.generateCoursesFromFile(testStrings);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("The date in your course file is in the incorrect format.", e.Message);
+            }
+        }
+
+        [TestMethod]
         public void generateAttendeesFromFileTest()
         {
             String[] testStrings = new String[]
@@ -64,6 +157,79 @@ namespace AttendeeCourseRegistrationTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void invalidDataFromAttendeeFile()
+        {
+            String[] testStrings = new String[]
+            {
+                "AttendeeId,FirstName,LastName,Company,Email,Phone",
+                "\"\",\"Joe\",\"Richards\",\"Killer Company\",\"jrichards@yahoo.com\",\"(704)123-1234\"",
+                "\"String should't go here!\",\"\",\"\",\"Nice Company\",\"jr123@gmail.com\",\"(704)777-7777\""
+            };
+            List<Attendee> testAttendees = Driver.generateAttendeesFromFile(testStrings);
+        }
+
+        [TestMethod]
+        public void validateMessageAttendeeInvalidID()
+        {
+            String[] testStrings = new String[]
+            {
+                "AttendeeId,FirstName,LastName,Company,Email,Phone",
+                "\"rgrgregergrgregerg\",\"Joe\",\"Richards\",\"Killer Company\",\"jrichards@yahoo.com\",\"(704)123-1234\"",
+                "34,\"FirstName\",\"LastName\",\"Nice Company\",\"jr123@gmail.com\",\"(704)777-7777\""
+            };
+
+            try
+            {
+                List<Attendee> testAttendees = Driver.generateAttendeesFromFile(testStrings);
+            }
+            catch (FormatException e)
+            {
+                Assert.AreEqual("The data in your attendee file is not in the correct format.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageAttendeeEmptyFN()
+        {
+            String[] testStrings = new String[]
+            {
+                "AttendeeId,FirstName,LastName,Company,Email,Phone",
+                "23,\"Joe\",\"Richards\",\"Killer Company\",\"jrichards@yahoo.com\",\"(704)123-1234\"",
+                "34,\"\",\"LastName\",\"Nice Company\",\"jr123@gmail.com\",\"(704)777-7777\""
+            };
+
+            try
+            {
+                List<Attendee> testAttendees = Driver.generateAttendeesFromFile(testStrings);
+            }
+            catch(Exception e)
+            {
+                Assert.AreEqual("First name in the attendee file can't be empty.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageAttendeeEmptyLN()
+        {
+            String[] testStrings = new String[]
+            {
+                "AttendeeId,FirstName,LastName,Company,Email,Phone",
+                "23,\"Joe\",\"Richards\",\"Killer Company\",\"jrichards@yahoo.com\",\"(704)123-1234\"",
+                "34,\"FirstName\",\"\",\"Nice Company\",\"jr123@gmail.com\",\"(704)777-7777\""
+            };
+
+            try
+            {
+                List<Attendee> testAttendees = Driver.generateAttendeesFromFile(testStrings);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Last name in the attendee file can't be empty.", e.Message);
+            }
+        }
+
+        [TestMethod]
         public void generateRegistrationsFromFileTest()
         {
             String[] testStrings = new String[]
@@ -72,7 +238,6 @@ namespace AttendeeCourseRegistrationTests
                 "23,45,1967-06-01 06:55:06",
                 "123,567,1824-02-15 03:11:04"
             };
-
             List<Registration> testRegistrations = Driver.generateRegistrationsFromFile(testStrings);
 
             Assert.AreEqual(23, testRegistrations[0].getCourseId());
@@ -81,6 +246,99 @@ namespace AttendeeCourseRegistrationTests
             Assert.AreEqual(123, testRegistrations[1].getCourseId());
             Assert.AreEqual(567, testRegistrations[1].getAttendeeId());
             Assert.AreEqual("1824-02-15 03:11:04", testRegistrations[1].getDateTime());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void invalidDataFromRegistrationFile()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,AttendeeId,DateTime",
+                "23,45,trhgthrth",
+                "123,\"grgergeg\",1824-02-15 03:11:04"
+            };
+            List<Registration> testRegistrations = Driver.generateRegistrationsFromFile(testStrings);
+        }
+
+        [TestMethod]
+        public void validateMessageRegistrationInvalidCourseID()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,AttendeeId,DateTime",
+                "\"grgergeg\",45,trhgthrth",
+                "123,234,1824-02-15 03:11:04"
+            };
+
+            try
+            {
+                List<Registration> testRegistrations = Driver.generateRegistrationsFromFile(testStrings);
+            }
+            catch(FormatException e)
+            {
+                Assert.AreEqual("The data in your registration file is not in the correct format.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageRegistrationInvalidAttendeeID()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,AttendeeId,DateTime",
+                "67,\"rgrgeregregregreg\",trhgthrth",
+                "123,234,1824-02-15 03:11:04"
+            };
+
+            try
+            {
+                List<Registration> testRegistrations = Driver.generateRegistrationsFromFile(testStrings);
+            }
+            catch (FormatException e)
+            {
+                Assert.AreEqual("The data in your registration file is not in the correct format.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageRegistrationInvalidDateTime()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,AttendeeId,DateTime",
+                "67,34,\"trhgthrth\"",
+                "123,234,1824-02-15 03:11:04"
+            };
+
+            try
+            {
+                List<Registration> testRegistrations = Driver.generateRegistrationsFromFile(testStrings);
+            }
+            catch (FormatException e)
+            {
+                Assert.AreEqual("The date in your registration file is in the incorrect format.", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void validateMessageRegistrationAttendeeRegisteredSameCourseTwice()
+        {
+            String[] testStrings = new String[]
+            {
+                "CourseId,AttendeeId,DateTime",
+                "67,234,1824-02-15 03:11:04",
+                "67,234,1824-02-15 03:11:04"
+            };
+
+            try
+            {
+                List<Registration> testRegistrations = Driver.generateRegistrationsFromFile(testStrings);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("An attendee cannot be registered for the same course twice.", e.Message);
+            }
         }
 
         [TestMethod]
@@ -96,6 +354,7 @@ namespace AttendeeCourseRegistrationTests
                          r2 = new Registration(1, 60, "2007-03-23 12:12:12"),
                          r3 = new Registration(1, 62, "2007-05-12 03:03:03");
             List<Registration> testRegistrations = new List<Registration>();
+            String testEnrollmentFile = System.Configuration.ConfigurationManager.AppSettings["testEnrollmentFile"];
 
             testAttendees.Add(a1);
             testAttendees.Add(a2);
@@ -104,8 +363,9 @@ namespace AttendeeCourseRegistrationTests
             testRegistrations.Add(r1);
             testRegistrations.Add(r2);
             testRegistrations.Add(r3);
+            Console.WriteLine(testRegistrations[0].getCourseId() + testCourses[0].getId());
             Driver.outputToCSV(testRegistrations, testCourses, testAttendees);
-            String[] enrollmentSt = File.ReadAllLines("testEnrollment.csv");
+            String[] enrollmentSt = File.ReadAllLines(testEnrollmentFile);
             TextFieldParser parser;
             parser = new TextFieldParser(new StringReader(enrollmentSt[3]));
             parser.HasFieldsEnclosedInQuotes = true;
