@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace AttendeeCourseRegistration
 {
     public class Registration
     {
-        private int courseId,
+        private BigInteger courseId,
                     attendeeId;
         private String dateTime;
 
@@ -19,7 +20,7 @@ namespace AttendeeCourseRegistration
             this.dateTime = null;
         }
                     
-        public Registration(int courseId, int attendeeId, String dateTime)
+        public Registration(BigInteger courseId, BigInteger attendeeId, String dateTime)
         {
             this.courseId = courseId;
             this.attendeeId = attendeeId;
@@ -41,12 +42,12 @@ namespace AttendeeCourseRegistration
             this.dateTime = dateTime;
         }
 
-        public int getCourseId()
+        public BigInteger getCourseId()
         {
             return courseId;
         }
 
-        public int getAttendeeId()
+        public BigInteger getAttendeeId()
         {
             return attendeeId;
         }
@@ -61,7 +62,7 @@ namespace AttendeeCourseRegistration
             String enrollmentStatus = "Wait Listed";
             List<Registration> enrolledAttendees = registrations.OrderBy(o => o.getDateTime())
                                                                 .Where(o => o.getCourseId() == course.getId())
-                                                                .Take(course.getCapacity())
+                                                                .Take((int)course.getCapacity())
                                                                 .ToList();
             for(int i = 0; i < enrolledAttendees.Count; i++)
             {

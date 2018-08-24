@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace AttendeeCourseRegistration
 {
     public class Attendee
     {
-        private int id;
+        private BigInteger id;
         private String firstName,
                        lastName,
                        company,
@@ -25,7 +26,7 @@ namespace AttendeeCourseRegistration
             this.phone = null;
         }
 
-        public Attendee(int id, String firstName, String lastName, String company, String email, String phone)
+        public Attendee(BigInteger id, String firstName, String lastName, String company, String email, String phone)
         {
             this.id = id;
             this.firstName = firstName;
@@ -35,7 +36,7 @@ namespace AttendeeCourseRegistration
             this.phone = phone;
         }
 
-        public void setId(int id)
+        public void setId(BigInteger id)
         {
             this.id = id;
         }
@@ -65,7 +66,7 @@ namespace AttendeeCourseRegistration
             this.phone = phone;
         }
 
-        public int getId()
+        public BigInteger getId()
         {
             return id;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text;
 using System.IO;
 using System.Collections.Generic;
@@ -79,7 +80,7 @@ namespace AttendeeCourseRegistration
                 if (values.Length > 5)
                 {
                     throw new Exception("The only columns in your course file should be: " +
-                                        "CourseId, Title, Description, DateTime and Capcity");
+                                        "ID, Title, Description, DateTime and Capcity");
                 }
 
                 int id = 0,
@@ -156,6 +157,13 @@ namespace AttendeeCourseRegistration
                     values = parser.ReadFields();
                 }
 
+                if (values.Length > 6)
+                {
+                    throw new Exception("The only columns in your attendee file should be: " +
+                                        "ID, FirstName, LastName, Company, Email, Phone "
+                                        + "and Capcity");
+                }
+
                 int id = 0;
                 String firstName = null,
                        lastName = null,
@@ -229,6 +237,12 @@ namespace AttendeeCourseRegistration
                     attendeeId = 0;
                 String dateTime = null;
 
+                if (values.Length > 3)
+                {
+                    throw new Exception("The only columns in your registration file should be: " +
+                                        "CourseId, AttendeeID and DateTime.");
+                }
+
                 try
                 {
                     courseId = int.Parse(values[0]);
@@ -282,12 +296,12 @@ namespace AttendeeCourseRegistration
 
                 for (int i = 0; i < registrations.Count; i++)
                 {
-                    int courseId = registrations[i].getCourseId();
+                    BigInteger courseId = registrations[i].getCourseId();
                     List<Course> course = courses.Where(o => o.getId() == registrations[i].getCourseId())
                                                  .Take(1)
                                                  .ToList();
                     String courseTitle = course[0].getTitle();
-                    int attendeeId = registrations[i].getAttendeeId();
+                    BigInteger attendeeId = registrations[i].getAttendeeId();
                     List<Attendee> attendee = attendees.Where(o => o.getId() == registrations[i].getAttendeeId())
                                                        .Take(1)
                                                        .ToList();
