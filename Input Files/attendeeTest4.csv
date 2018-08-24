@@ -6,7 +6,7 @@ AttendeeID,FirstName,LastName,Company,Email,Phone
 330618,Raymonde,Barron,Spectertainment,sburke@mac.com,(204) 403-3517
 346331,Renetta,Parenti,Yeworks,ninenine@yahoo.ca,(772) 277-2476
 356298,Minta,Butler-vincent,Elecoms,,(653) 535-3374
-361480,Humberto,Mahdavi-damghani,,fhirsch@optonline.net,(953) 796-9986
+361480,Humberto,Mahdavi-damghani,,fhirsch@optonline.net,(953) 796-9986, blahblahblah
 365943,Donnette,Reinold,Forestsearch,,
 367632,Judie,Drum,,hachi@msn.com,
 369358,Kristian,Beckham,Business,frederic@outlook.com,
@@ -31,16 +31,16 @@ AttendeeID,FirstName,LastName,Company,Email,Phone
 537961,Kelsey,Helen,Business Info,kramulous@comcast.net,(406) 406-8031
 555091,Carter,Judith,Clubhouse Business,sbmrjbr@optonline.net,
 556355,Dayanara,Misael,Voyager Business,,(444) 634-0032
-574401,Beatrice,Zander,Business Factor,aukjan@comcast.net,(725) 654-8919
+fddvgdfrg,Beatrice,Zander,Business Factor,aukjan@comcast.net,(725) 654-8919
 574620,Heidy,Wesley,,corrada@hotmail.com,(796) 817-7334
 590836,Mateo,Tatiana,Business Byte,panolex@live.com,(567) 393-4979
-591059,Ricardo,Albert,Land Business,wmszeliga@live.com,(211) 361-7860
+591059,,Albert,Land Business,wmszeliga@live.com,(211) 361-7860
 599864,Khalil,Danna,Snipe Business,naupa@gmail.com,(703) 504-4627
 613371,Jameson,Katelyn,,oevans@yahoo.ca,
 618980,Gillian,Brent,,,
 619037,Tony,Jerome,Click Business,,(719) 424-3072
 634242,Kristina,Kolton,,,
-638545,Heather,Elliana,Wizard Business,,
+638545,Heather,,Wizard Business,,
 647965,Zayden,Jefferson,,greear@me.com,
 653984,Sara,Arielle,Fireworks Business,,
 660349,Ross,Matias,,hachi@aol.com,
@@ -61,7 +61,7 @@ AttendeeID,FirstName,LastName,Company,Email,Phone
 775342,Darren,Yadira,,kawasaki@att.net,(546) 442-8664
 778130,Jayvon,Aliana,,,
 778945,Darius,Malia,Business Inspire,wainwrig@hotmail.com,
-779711,Makai,Orlando,Business Project,,(707) 221-5748
+sdfsdfdsfsd,Makai,Orlando,Business Project,,(707) 221-5748
 795200,Dakota,Clayton,,burns@mac.com,(874) 920-5273
 806439,Richard,Kaley,Business Loving,cameron@icloud.com,(395) 886-4728
 806972,Jamarcus,Maggie,,kaiser@outlook.com,
