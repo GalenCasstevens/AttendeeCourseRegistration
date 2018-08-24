@@ -80,10 +80,11 @@ namespace AttendeeCourseRegistration
                 if (values.Length > 5)
                 {
                     throw new Exception("The only columns in your course file should be: " +
-                                        "ID, Title, Description, DateTime and Capcity");
+                                        "ID, Title, Description, DateTime and Capcity on row "
+                                        + (i + 1) + ".");
                 }
 
-                int id = 0,
+                BigInteger id = 0,
                     capacity = 0;
                 String title = null,
                        description = null,
@@ -94,7 +95,7 @@ namespace AttendeeCourseRegistration
                 }
                 catch (FormatException e)
                 {
-                    throw new FormatException("An ID in your course file is invalid.", e);
+                    throw new FormatException("An ID in your course file is invalid on row " + (i + 1) + ".", e);
                 }
 
                 title = values[1];
@@ -105,7 +106,7 @@ namespace AttendeeCourseRegistration
                 DateTime test;
                 if(!DateTime.TryParse(values[3], out test))
                 {
-                    throw new Exception("The date in your course file is in the incorrect format.");
+                    throw new Exception("The date in your course file is in the incorrect format on row " + (i + 1) + ".");
                 }
                 dateTime = values[3];
 
@@ -115,19 +116,20 @@ namespace AttendeeCourseRegistration
                 }
                 catch (FormatException e)
                 {
-                    throw new FormatException("A capacity value in your course file is invalid.", e);
+                    throw new FormatException("A capacity value in your course file is invalid on row " + (i + 1) + ".", e);
                 }
 
                 if(String.IsNullOrEmpty(title))
                 {
-                    throw new Exception("Title in the course file can't be empty");
+                    throw new Exception("Title in the course file can't be empty on row " + (i + 1) + ".");
                 }
 
                 for(int j = 0; j < result.Count; j++)
                 {
                     if(id == result[j].getId())
                     {
-                        throw new Exception("IDs in the course file must be unique.");
+                        throw new Exception("IDs in the course file must be unique on row " + (j + 2)
+                                            + " and row " + (i + 1) + ".");
                     }
                 }
 
@@ -161,10 +163,10 @@ namespace AttendeeCourseRegistration
                 {
                     throw new Exception("The only columns in your attendee file should be: " +
                                         "ID, FirstName, LastName, Company, Email, Phone "
-                                        + "and Capcity");
+                                        + "and Capcity on row " + (i + 1) + ".");
                 }
 
-                int id = 0;
+                BigInteger id = 0;
                 String firstName = null,
                        lastName = null,
                        company = null,
@@ -176,7 +178,7 @@ namespace AttendeeCourseRegistration
                 }
                 catch (FormatException e)
                 {
-                    throw new FormatException("An ID in your attendee file is invalid.");
+                    throw new FormatException("An ID in your attendee file is invalid on row " + (i + 1) + ".");
                 }
                 firstName = values[1];
                 lastName = values[2];
@@ -195,27 +197,28 @@ namespace AttendeeCourseRegistration
 
                 if(String.IsNullOrEmpty(firstName))
                 {
-                    throw new Exception("First name in the attendee file can't be empty.");
+                    throw new Exception("First name in the attendee file can't be empty on row " + (i + 1) + ".");
                 }
                 if(String.IsNullOrEmpty(lastName))
                 {
-                    throw new Exception("Last name in the attendee file can't be empty.");
+                    throw new Exception("Last name in the attendee file can't be empty on row " + (i + 1) + ".");
                 }
                 
                 if(firstName.All(Char.IsNumber))
                 {
-                    throw new Exception("First name in the attendee file cannot contain numbers.");
+                    throw new Exception("First name in the attendee file cannot contain numbers on row " + (i + 1) + ".");
                 }
                 if (lastName.All(Char.IsNumber))
                 {
-                    throw new Exception("Last name in the attendee file cannot contain numbers.");
+                    throw new Exception("Last name in the attendee file cannot contain numbers onc row " + (i + 1) + ".");
                 }
-                
+
                 for(int j = 0; j < result.Count; j++)
                 {
                     if (id == result[j].getId())
                     {
-                        throw new Exception("IDs in the attendee file must be unique.");
+                        throw new Exception("IDs in the attendee file must be unique on row " + (j + 2) + 
+                                            " and row " + (i + 1) + ".");
                     }
                 }
 
@@ -240,7 +243,7 @@ namespace AttendeeCourseRegistration
                 if (values.Length > 3)
                 {
                     throw new Exception("The only columns in your registration file should be: " +
-                                        "CourseId, AttendeeID and DateTime.");
+                                        "CourseId, AttendeeID and DateTime on row " + (i + 1) + ".");
                 }
 
                 try
@@ -249,7 +252,7 @@ namespace AttendeeCourseRegistration
                 }
                 catch (FormatException e)
                 {
-                    throw new FormatException("A CourseID in your registration file is not in the correct format.");
+                    throw new FormatException("A CourseID in your registration file is invalid on row " + (i + 1) + ".");
                 }
                 try
                 {
@@ -257,21 +260,22 @@ namespace AttendeeCourseRegistration
                 }
                 catch (FormatException e)
                 {
-                    throw new FormatException("A AttendeeID in your registration file is not in the correct format.");
+                    throw new FormatException("An AttendeeID in your registration file is invalid on row " + (i + 1) + ".");
                 }
                 dateTime = values[2];
 
                 DateTime test;
                 if (!DateTime.TryParse(values[2], out test))
                 {
-                    throw new FormatException("The date in your registration file is in the incorrect format.");
+                    throw new FormatException("The date in your registration file is invalid on row " + (i + 1) + ".");
                 }
 
                 for (int j = 0; j < result.Count; j++)
                 {
                     if(courseId == result[j].getCourseId() && attendeeId == result[j].getAttendeeId())
                     {
-                        throw new Exception("An attendee cannot be registered for the same course twice.");
+                        throw new Exception("An attendee cannot be registered for the same course twice on row "
+                                            + (j + 2) + " and row " + (i + 1) + ".");
                     }
                 }
 

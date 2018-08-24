@@ -68,7 +68,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch(FormatException e)
             {
-                Assert.AreEqual("An ID in your course file is invalid.", e.Message);
+                Assert.AreEqual("An ID in your course file is invalid on row 2.", e.Message);
             }
         }
 
@@ -88,7 +88,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (FormatException e)
             {
-                Assert.AreEqual("A capacity value in your course file is invalid.", e.Message);
+                Assert.AreEqual("A capacity value in your course file is invalid on row 2.", e.Message);
             }
         }
 
@@ -108,7 +108,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (Exception e)
             {
-                Assert.AreEqual("IDs in the course file must be unique.", e.Message);
+                Assert.AreEqual("IDs in the course file must be unique on row 2 and row 3.", e.Message);
             }
         }
 
@@ -128,7 +128,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (Exception e)
             {
-                Assert.AreEqual("Title in the course file can't be empty", e.Message);
+                Assert.AreEqual("Title in the course file can't be empty on row 2.", e.Message);
             }
         }
 
@@ -148,7 +148,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (Exception e)
             {
-                Assert.AreEqual("The date in your course file is in the incorrect format.", e.Message);
+                Assert.AreEqual("The date in your course file is in the incorrect format on row 3.", e.Message);
             }
         }
 
@@ -206,7 +206,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (FormatException e)
             {
-                Assert.AreEqual("An ID in your attendee file is invalid.", e.Message);
+                Assert.AreEqual("An ID in your attendee file is invalid on row 2.", e.Message);
             }
         }
 
@@ -226,7 +226,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch(Exception e)
             {
-                Assert.AreEqual("First name in the attendee file can't be empty.", e.Message);
+                Assert.AreEqual("First name in the attendee file can't be empty on row 3.", e.Message);
             }
         }
 
@@ -246,7 +246,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (Exception e)
             {
-                Assert.AreEqual("Last name in the attendee file can't be empty.", e.Message);
+                Assert.AreEqual("Last name in the attendee file can't be empty on row 3.", e.Message);
             }
         }
 
@@ -298,7 +298,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch(FormatException e)
             {
-                Assert.AreEqual("A CourseID in your registration file is not in the correct format.", e.Message);
+                Assert.AreEqual("A CourseID in your registration file is invalid on row 2.", e.Message);
             }
         }
 
@@ -318,7 +318,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (FormatException e)
             {
-                Assert.AreEqual("A AttendeeID in your registration file is not in the correct format.", e.Message);
+                Assert.AreEqual("An AttendeeID in your registration file is invalid on row 2.", e.Message);
             }
         }
 
@@ -338,7 +338,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (FormatException e)
             {
-                Assert.AreEqual("The date in your registration file is in the incorrect format.", e.Message);
+                Assert.AreEqual("The date in your registration file is invalid on row 2.", e.Message);
             }
         }
 
@@ -358,7 +358,7 @@ namespace AttendeeCourseRegistrationTests
             }
             catch (Exception e)
             {
-                Assert.AreEqual("An attendee cannot be registered for the same course twice.", e.Message);
+                Assert.AreEqual("An attendee cannot be registered for the same course twice on row 2 and row 3.", e.Message);
             }
         }
 
