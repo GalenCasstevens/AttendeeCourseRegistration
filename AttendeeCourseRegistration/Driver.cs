@@ -23,6 +23,11 @@ namespace AttendeeCourseRegistration
             String[] courseSt = new String[]{};
             String[] attendeeSt = new String[]{};
             String[] registrationSt = new String[]{};
+
+            Console.WriteLine("_.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~.\n");
+            Console.WriteLine("Welcome to Attendee Course Registratin App!!");
+            Console.WriteLine("\n_.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~.\n");
+
             /*         
             Console.Write("Where is the location of your course csv file?: ");
             courseFile = Console.ReadLine();
@@ -46,13 +51,14 @@ namespace AttendeeCourseRegistration
 
                 if(errors.Count > 0)
                 {
-                    for(int i = 0; i < errors.Count; i++)
+                    Console.WriteLine("Errors: \n");
+                    for (int i = 0; i < errors.Count; i++)
                     {
-                        Console.WriteLine(errors[i]);
+                        Console.WriteLine(i + 1 + ". " + errors[i]);
                     }
+                    Console.WriteLine("\n_.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~.");
                     throw new Exception("");
                 }
-
 
                 outputToCSV(registrations, courses, attendees);
             }
@@ -64,7 +70,11 @@ namespace AttendeeCourseRegistration
             {
                 Console.WriteLine(e.Message);
             }
-
+            finally
+            {
+                Console.WriteLine("Press enter to exit.");
+                Console.WriteLine("\n_.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~.\n");
+            }
             Console.Read();
         }
 
@@ -345,8 +355,9 @@ namespace AttendeeCourseRegistration
                     csv.AppendLine(newLine);
                 }
 
-                File.WriteAllText(testEnrollmentFile, csv.ToString());
+                File.WriteAllText(outputFile, csv.ToString());
                 Console.WriteLine("Reading from and outputting to files was successful.");
+                Console.WriteLine("\n_.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~._.~\"~.\n");
             }
             catch
             {
